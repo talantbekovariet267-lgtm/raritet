@@ -1,0 +1,6 @@
+{% for b in books %}
+<h1> {{ b.title }}: {{ b.rating }} </h1>
+<img src="{{ b.cover_url }}" width="100" alt="">
+<a href="{{ b.wiki_url }}">Ссылка на книгу</a>
+<hr>
+{% endfor %}

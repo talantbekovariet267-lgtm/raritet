@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raritet - Магазин одежды</title>
+</head>
+<body>
+    
+
+      <h1>добро пожолават в сайт</h1>
+
+    
+    <ul>
+        {% for b in brands %}
+             <li> {{ b.name }} </li>
+        {% endfor %}
+    </ul>
+    <hr> 
+
+    <h2>Товары:</h2>
+    <ul>
+        {% for pr in products %}
+            <li>
+                <img src="{{pr.image}}" alt="" width="65">
+                <h3>{{ pr.name }} {{ pr.price }}$ {{ pr.discount }}%</h3>
+                <p>
+                    Цвета:
+                    {% for c in pr.color.all %}
+                        <div
+                            style="width: 16px; height: 16px; background: {{ c }}"
+                        >
+                        </div>
+                    {% endfor %}
+                </p>
+                <p>
+                    Размеры:
+                    {% for s in pr.size.all %}
+                        {{ s }}
+                    {% endfor %}
+                </p>
+                <hr>
+                {{pr.description}}
+            </li>
+    {% endfor %}
+    </ul>
+</body>
+</html>
+
+
+
+
+
+      <h1>добро пожолават в сайт</h1>
+
+    
+    <ul>
+        {% for c in category %}
+             <li> {{ c.name }} </li>
+        {% endfor %}
+    </ul>
+    <hr> 
+
+    <h2>Катагори:</h2>
+
+    <ul>
+        {% for c in category %}
+             <li>
+                <img src="{{ c.image_url }}" alt="" width="80" >
+                <h3>{{ c.name }}</h3>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+
+
